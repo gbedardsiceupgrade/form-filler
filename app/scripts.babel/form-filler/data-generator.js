@@ -4,6 +4,7 @@ import jQuery from 'jquery';
 import moment from 'moment';
 import RandExp from 'randexp';
 import * as data from './dummy-data';
+import triggerChangeEvent from './utils/trigger-change-event';
 
 class DataGenerator {
   constructor(options) {
@@ -593,9 +594,7 @@ class DataGenerator {
 
     if (elementType !== 'checkbox' && elementType !== 'radio' && this.options.triggerClickEvents) {
       if (window.Event && window.dispatchEvent) {
-        element.dispatchEvent(new Event('input'));
-        element.dispatchEvent(new Event('change'));
-        element.dispatchEvent(new Event('blur'));
+        triggerChangeEvent(element);
       }
     }
   }
@@ -614,9 +613,7 @@ class DataGenerator {
 
     if (this.options.triggerClickEvents) {
       if (window.Event && window.dispatchEvent) {
-        element.dispatchEvent(new Event('input'));
-        element.dispatchEvent(new Event('change'));
-        element.dispatchEvent(new Event('blur'));
+        triggerChangeEvent(element);
       }
     }
   }

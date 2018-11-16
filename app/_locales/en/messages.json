@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Form Filler"
+    "message": "Form Filler (React Friendly)"
   },
   "extensionDescription": {
     "message": "Fill all inputs in a page with dummy data."
